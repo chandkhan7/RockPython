@@ -1,0 +1,179 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Clean modern font */
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #1d2a45, #2e3b4e); /* Smooth gradient background */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite; /* Dynamic background animation */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Heading */
+h1 {
+  font-size: 3.5em;
+  color: #ffffff;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.5); /* Title shadow for more contrast */
+  margin-bottom: 30px;
+}
+
+/* Game Area */
+#gameArea {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for the game area */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Canvas Styling */
+canvas {
+  border: 4px solid #00FF00; /* Bright green border around canvas */
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); /* Glow effect around canvas */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Scoreboard */
+#scoreboard {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#scoreText, #bestScoreText {
+  margin: 5px 0;
+}
+
+/* Restart Button Styling */
+#restartBtn {
+  margin-top: 30px;
+  padding: 18px 36px;
+  font-size: 1.2em;
+  background-color: #ff4081; /* Bright pink-red color */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover transition */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Strong shadow effect */
+}
+
+/* Restart button hover effect */
+#restartBtn:hover {
+  background-color: #f50057;
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Increased shadow on hover */
+}
+
+#restartBtn:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2.8em;
+  }
+
+  #gameArea {
+    width: 100%;
+    padding: 15px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  #scoreboard {
+    font-size: 1.2em;
+  }
+
+  #restartBtn {
+    width: 80%;
+    padding: 15px 25px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2em;
+  }
+
+  #gameArea {
+    padding: 10px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  #scoreboard {
+    font-size: 1.1em;
+  }
+
+  #restartBtn {
+    width: 80%;
+    padding: 14px 22px;
+    font-size: 1em;
+  }
+}
+
+/* Smooth Fade-In Effect for Restart Button */
+#restartBtn {
+  display: none;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Game Over Styling */
+#gameOverText {
+  font-size: 2em;
+  color: #f44336;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* Cool Down Transition for Texts and Buttons */
+#scoreText, #bestScoreText, #restartBtn {
+  transition: opacity 0.3s ease-in-out;
+}
